@@ -42,7 +42,7 @@
                                             template(
                                                 v-slot:activator="{ on, attrs}"
                                             )
-                                                v-btn.background-white(
+                                                v-btn(
                                                     icon
                                                     v-on="on"
                                                     v-bind="attrs"
@@ -54,14 +54,36 @@
                                                         color="secondary"
                                                     ) {{ icon.icon }}
                                             span {{ icon.info }}
-                                    span.text-h6 {{ value.title }}
+                                    span.text-md-h5.text-h6 {{ value.title }}
                                     br
                                     br
-                                    span.text-subtitle-2(v-html="value.date")
+                                    span.text-md-h6.text-subtitle-2(v-html="value.date")
                                     br
                                     br
-                                    .description.text-body-2
+                                    .description.text-md-body-1.text-body-2
                                         span(v-html="value.description")
+                                    br
+                                    span.text-md-h6.text-subtitle-2 Technologies used:
+                                    .icon-container-center.mt-4
+                                        v-tooltip(
+                                            bottom
+                                            v-for="(tech, index) in value.technologies"
+                                            :key="index"
+                                        )
+                                            template(
+                                                v-slot:activator="{ on, attrs}"
+                                            )
+                                                v-img(
+                                                    v-on="on"
+                                                    v-bind="attrs"
+                                                    max-width="50px"
+                                                    height="50px"
+                                                    style="margin: 0 10px;"
+                                                    contain
+                                                    :src="require('@/assets/technologies/' + tech.image)"
+                                                )
+                                            span {{ tech.name }}
+
 </template>
 
 <script>
@@ -105,11 +127,19 @@
                         title: "Daily Innovation CS Tutorials",
                         date: "June 2020 - Ongoing",
                         description: `
-                            - Worked on a tool to automate the migration of routers<br>
-                            - Reduced development time of project by 2-3 weeks<br>
-                            - Parsed and organized data from router tests using Python’s TextFSM and Regex modules<br>
-                            - Made a development server where TextFSM templates could be uploaded and displayed to show work over 7 weeks. This was implemented using Flask and MongoDB
-                        `
+                            - Worked with a partner to create a tutorial website<br>
+                            - Wrote peer-edited tutorials on data structures and other relevant computer science skills
+                        `,
+                        technologies: [
+                            {
+                                name: 'Vue',
+                                image: 'vue.png'
+                            },
+                            {
+                                name: 'Vuetify',
+                                image: 'vuetify.png'
+                            }
+                        ]
                     },
                     "Online Portfolio": {
                         icons: [
@@ -122,11 +152,22 @@
                         title: "Online Portfolio",
                         date: "August - September 2020",
                         description: `
-                            - Worked on a tool to automate the migration of routers<br>
-                            - Reduced development time of project by 2-3 weeks<br>
-                            - Parsed and organized data from router tests using Python’s TextFSM and Regex modules<br>
-                            - Made a development server where TextFSM templates could be uploaded and displayed to show work over 7 weeks. This was implemented using Flask and MongoDB
-                        `
+                            - This webpage speaks for the project
+                        `,
+                        technologies: [
+                            {
+                                name: 'Vue',
+                                image: 'vue.png'
+                            },
+                            {
+                                name: 'Vuetify',
+                                image: 'vuetify.png'
+                            },
+                            {
+                                name: 'Pug',
+                                image: 'pug.png'
+                            }
+                        ]
                     },
                     "FredZip": {
                         icons: [
@@ -139,11 +180,15 @@
                         title: "Text Compression and Extraction",
                         date: "August 2020",
                         description: `
-                            - Worked on a tool to automate the migration of routers<br>
-                            - Reduced development time of project by 2-3 weeks<br>
-                            - Parsed and organized data from router tests using Python’s TextFSM and Regex modules<br>
-                            - Made a development server where TextFSM templates could be uploaded and displayed to show work over 7 weeks. This was implemented using Flask and MongoDB
-                        `
+                            - Compresses text files with a ~45% compression ratio using Huffman then LZ77 compression<br>
+                            - Required custom use of binary trees, stacks and hashmaps to make Huffman compression successful
+                        `,
+                        technologies: [
+                            {
+                                name: 'C++',
+                                image: 'c++.png'
+                            }
+                        ]
                     }
                 }
             }
@@ -166,7 +211,9 @@
             }
         },
         mounted() {
-            this.$refs["textContainer"].style.height = this.$refs["textContainer"].children[0].children[0].offsetHeight+"px"
+            setTimeout(()=>{
+                this.$refs["textContainer"].style.height = this.$refs["textContainer"].children[0].children[0].offsetHeight+"px"
+            }, 50)
         }
     }
 </script>
@@ -179,5 +226,16 @@
     .icon-container {
         display: flex;
         justify-content: space-evenly;
+    }
+    .icon-container-center {
+        display: flex;
+        justify-content: center;
+    }
+    .block-container {
+        width: 100%;
+        position: absolute;
+    }
+    .relative-container {
+        position: relative;
     }
 </style>
