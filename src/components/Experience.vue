@@ -1,8 +1,5 @@
 <template lang="pug">
-    v-container(
-        fluid
-        ref="container"
-    )
+    div
         span.text-lg-h2.text-h3 Experience
         br
         br
@@ -111,10 +108,13 @@
 </script>
 
 <style scoped>
-    .container {
-        background-color: #FFFDE7;
-    }
     .description {
         text-align: left;
+    }
+    .block-container {
+        position: absolute;
+    }
+    .relative-container {
+        position: relative;
     }
 </style>
