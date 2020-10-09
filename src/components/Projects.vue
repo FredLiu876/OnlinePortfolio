@@ -181,7 +181,7 @@
                         date: "August 2020",
                         description: `
                             - Compresses text files with a ~45% compression ratio using Huffman then LZ77 compression<br>
-                            - Required custom use of binary trees, stacks and hashmaps to make Huffman compression successful
+                            - Implemented binary trees, stacks and used hashmaps to make Huffman compression successful
                         `,
                         technologies: [
                             {
