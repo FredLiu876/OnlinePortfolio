@@ -114,7 +114,7 @@
                     "CS Tutorials": {
                         icons: [
                             {
-                                link: 'https://github.com/TheFrog12345/CSTutorials',
+                                link: 'https://github.com/FredLiu876/CSTutorials',
                                 icon: 'mdi-github',
                                 info: 'Github'
                             },
@@ -144,7 +144,7 @@
                     "Online Portfolio": {
                         icons: [
                             {
-                                link: 'https://github.com/TheFrog12345/OnlinePortfolio',
+                                link: 'https://github.com/FredLiu876/OnlinePortfolio',
                                 icon: 'mdi-github',
                                 info: 'Github'
                             }
@@ -172,7 +172,7 @@
                     "FredZip": {
                         icons: [
                             {
-                                link: 'https://github.com/TheFrog12345/FredZip',
+                                link: 'https://github.com/FredLiu876/FredZip',
                                 icon: 'mdi-github',
                                 info: 'Github'
                             }

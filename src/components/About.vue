@@ -22,6 +22,18 @@
                 )
                     br
                     span.text-body-2.pt-4 {{ paragraph }}
+                .text-left
+                    br
+                    span.text-body-2 To learn more, download my resume or scroll down!
+                    br
+                    br
+                    a(
+                        href="/assets/Fred_Resume.pdf"
+                        style="text-decoration: none;"
+                        download
+                    )
+                        v-btn Resume
+                            v-icon mdi-download
 </template>
 
 <script>
