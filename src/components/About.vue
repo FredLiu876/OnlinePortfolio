@@ -24,8 +24,6 @@
                     span.text-body-2.pt-4 {{ paragraph }}
                 .text-left
                     br
-                    span.text-body-2 To learn more, download my resume or scroll down!
-                    br
                     br
                     a(
                         href="/assets/Fred_Resume.pdf"
@@ -47,8 +45,11 @@
                     However, despite all the amazing places out there, nothing beats the humble feeling of sitting down, tuning into some music and coding!
                     `,
                     `
-                    I'm very passionate about computer science, knowing that I can make apps that benefit others from just my laptop.
+                    I'm very passionate about computer science, knowing that the skills I learn in this field can benefit many people.
                     I hope to use my skills to make a positive impact!
+                    `,
+                    `
+                    To learn more, download my resume or scroll down!
                     `
                 ]
             }
