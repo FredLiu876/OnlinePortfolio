@@ -21,15 +21,7 @@
                     ref="About"
                 )
                     About
-                Container(
-                    name="Tabs"
-                    color="--v-secondary-base"
-                    background-color="--v-primary-darken1"
-                    ref="Tabs"
-                )
-                    Tabs(
-                        @containerResize="setHeight"
-                    )
+                Tabs
                 Container(
                     name="Contact"
                     color="--v-secondary-darken1"

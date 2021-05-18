@@ -16,12 +16,15 @@
         )
             v-tab-item(
                 v-for="tab in tabs"
+                :key="tab"
             )
                 v-hover
                     template(v-slot:default="{ hover }")
                         v-card(
                             v-for="item in tab.items"
                             flat
+                            height="200px"
+                            width="200px"
                         )
                             v-img(
                                 :src="'@/assets/' + item.src"
