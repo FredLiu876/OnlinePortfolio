@@ -49,7 +49,7 @@
                     I hope to use my skills to make a positive impact!
                     `,
                     `
-                    To learn more, download my resume or scroll down!
+                    To learn more, download my resume or browse the tabs below to see what I've been up to!
                     `
                 ]
             }

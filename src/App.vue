@@ -22,33 +22,13 @@
                 )
                     About
                 Container(
-                    name="Skills"
+                    name="Tabs"
                     color="--v-secondary-base"
                     background-color="--v-primary-darken1"
-                    ref="Skills"
+                    ref="Tabs"
                 )
-                    Skills(
+                    Tabs(
                         @containerResize="setHeight"
-                    )
-                Container(
-                    name="Experience"
-                    color="--text"
-                    background-color="--v-secondary-base"
-                    ref="Experience"
-                )
-                    Experience(
-                        @containerResize="setHeight"
-                        :windowWidth="windowWidth"
-                    )
-                Container(
-                    name="Projects"
-                    color="--v-secondary-base"
-                    background-color="--v-accent-lighten1"
-                    ref="Projects"
-                )
-                    Projects(
-                        @containerResize="setHeight"
-                        :windowWidth="windowWidth"
                     )
                 Container(
                     name="Contact"
@@ -69,9 +49,7 @@
     import VueCarousel from '@/components/VueCarousel.vue'
     import Container from '@/components/Container.vue'
     import About from '@/components/About.vue'
-    import Skills from '@/components/Skills.vue'
-    import Experience from '@/components/Experience.vue'
-    import Projects from '@/components/Projects.vue'
+    import Tabs from '@/components/Tabs.vue'
     import Contact from '@/components/Contact.vue'
     export default {
         name: "App",
@@ -81,9 +59,7 @@
                 windowHeight: 0,
                 containerHeights: {
                     "About": 0,
-                    "Skills": 0,
-                    "Experience": 0,
-                    "Projects": 0,
+                    "Tabs": 0,
                     "Contact": 0
                 }
             }
@@ -93,9 +69,7 @@
             VueCarousel,
             Container,
             About,
-            Skills,
-            Experience,
-            Projects,
+            Tabs,
             Contact
         },
         methods: {
