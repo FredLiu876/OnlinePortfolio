@@ -5,10 +5,11 @@
             :elevation="scrollTop == 0 ? 0:12"
             :color="scrollTop < windowHeight-66 ? 'rgb(0, 0, 0, 0)':'primary'"
             v-scroll="checkTop"
+            style="z-index: 10 !important"
         )
             .d-flex.align-center
                 v-btn.home-button.navbar-link.secondary--text(
-                    :class="scrollTop < windowHeight-64 ? 'active':''"
+                    :class="scrollTop < windowHeight-64 && !contactStatus ? 'active':''"
                     text
                     href="#app"
                 )
@@ -16,34 +17,22 @@
             v-toolbar-items.ml-4
                 v-btn.navbar-link.secondary--text(
                     class="hidden-sm-and-down"
-                    :class="scrollTop >= windowHeight-64 && scrollTop < windowHeight+aboutHeight-64 ? 'active':''"
+                    :class="scrollTop >= windowHeight-64 && scrollTop < windowHeight+aboutHeight-64 && !contactStatus ? 'active':''"
                     text
                     href="#about"
                 ) About
                 v-btn.navbar-link.secondary--text(
                     class="hidden-sm-and-down"
-                    :class="scrollTop >= windowHeight+aboutHeight-64 && scrollTop < windowHeight+aboutHeight+skillsHeight-64 ? 'active':''"
+                    :class="scrollTop >= windowHeight+aboutHeight-64 && !contactStatus ? 'active':''"
                     text
-                    href="#skills"
-                ) Skills
+                    href="#portfolio"
+                ) Portfolio
                 v-btn.navbar-link.secondary--text(
-                    class="hidden-sm-and-down"
-                    :class="scrollTop >= windowHeight+aboutHeight+skillsHeight-64 && scrollTop < windowHeight+aboutHeight+skillsHeight+experienceHeight-64 ? 'active':''"
-                    text
-                    href="#experience"
-                ) Experience
-                v-btn.navbar-link.secondary--text(
-                    class="hidden-sm-and-down"
-                    :class="scrollTop >= windowHeight+aboutHeight+skillsHeight+experienceHeight-64 && scrollTop < windowHeight+aboutHeight+skillsHeight+experienceHeight+projectsHeight-64 ? 'active':''"
-                    text
-                    href="#projects"
-                ) Projects
-                v-btn.navbar-link.secondary--text(
-                    class="hidden-sm-and-down"
-                    :class="scrollTop >= windowHeight+aboutHeight+skillsHeight+experienceHeight+projectsHeight-64 ? 'active':''"
-                    text
-                    href="#contact"
-                ) Contact
+                        class="hidden-sm-and-down"
+                        :class="contactStatus ? 'active':''"
+                        text
+                        @click="openContact"
+                    ) Contact
             v-divider.nav-divider
             v-app-bar-nav-icon(
                 color="secondary"
@@ -62,6 +51,7 @@
                 overlay-color="primary"
                 color="primary"
                 class="text-center"
+                style="z-index: 11 !important"
             )
                 v-list
                     v-list-item
@@ -72,40 +62,25 @@
                 v-list
                     v-list-item
                         v-btn.navbar-link.secondary--text(
-                            :class="scrollTop >= windowHeight-64 && scrollTop < windowHeight+aboutHeight-64 ? 'active':''"
+                            :class="scrollTop >= windowHeight-64 && scrollTop < windowHeight+aboutHeight-64 && !contactStatus ? 'active':''"
                             text
                             width="100%"
                             href="#about"
                         ) About
                     v-list-item
                         v-btn.navbar-link.secondary--text(
-                            :class="scrollTop >= windowHeight+aboutHeight-64 && scrollTop < windowHeight+aboutHeight+skillsHeight-64 ? 'active':''"
+                            :class="scrollTop >= windowHeight+aboutHeight-64 && !contactStatus ? 'active':''"
                             text
                             width="100%"
-                            href="#skills"
-                        ) Skills
+                            href="#portfolio"
+                        ) Portfolio
                     v-list-item
                         v-btn.navbar-link.secondary--text(
-                            :class="scrollTop >= windowHeight+aboutHeight+skillsHeight-64 && scrollTop < windowHeight+aboutHeight+skillsHeight+experienceHeight-64 ? 'active':''"
+                            :class="contactStatus ? 'active':''"
                             text
                             width="100%"
-                            href="#experience"
-                        ) Experience
-                    v-list-item
-                        v-btn.navbar-link.secondary--text(
-                            :class="scrollTop >= windowHeight+aboutHeight+skillsHeight+experienceHeight-64 && scrollTop < windowHeight+aboutHeight+skillsHeight+experienceHeight+projectsHeight-64 ? 'active':''"
-                            text
-                            width="100%"
-                            href="#projects"
-                        ) Projects
-                    v-list-item
-                        v-btn.navbar-link.secondary--text(
-                            :class="scrollTop >= windowHeight+aboutHeight+skillsHeight+experienceHeight+projectsHeight-64 ? 'active':''"
-                            text
-                            width="100%"
-                            href="#contact"
+                            @click="openContact"
                         ) Contact
-
 </template>
 
 <script>
@@ -130,17 +105,13 @@
                 required: true,
                 type: Number
             },
-            skillsHeight: {
+            portfolioHeight: {
                 required: true,
                 type: Number
             },
-            experienceHeight: {
+            contactStatus: {
                 required: true,
-                type: Number
-            },
-            projectsHeight: {
-                required: true,
-                type: Number
+                type: Boolean
             }
         },
         methods: {
@@ -151,6 +122,9 @@
                 if (this.windowWidth >= 960) {
                     this.showSide = false
                 }
+            },
+            openContact: function() {
+                this.$emit('openContact')
             }
         },
         mounted() {

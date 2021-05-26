@@ -5,9 +5,9 @@
                 :windowWidth="windowWidth"
                 :windowHeight="windowHeight"
                 :aboutHeight="containerHeights['About']"
-                :skillsHeight="containerHeights['Skills']"
-                :experienceHeight="containerHeights['Experience']"
-                :projectsHeight="containerHeights['Projects']"
+                :portfolioHeight="containerHeights['Portfolio']"
+                @openContact="sheet = !sheet"
+                :contactStatus="sheet"
             )
             v-main
                 VueCarousel(
@@ -21,19 +21,81 @@
                     ref="About"
                 )
                     About
-                Tabs
+                Container(
+                    name="Portfolio"
+                    color="--text"
+                    background-color="--v-accent-lighten4"
+                    ref="Portfolio"
+                )
+                    Portfolio
+                Tabs(
+                    style="margin-top: -44px"
+                    ref="Tabs"
+                    :windowWidth="windowWidth"
+                    :noScrollWidth="noScrollWidth"
+                )
                 Container(
                     name="Contact"
-                    color="--v-secondary-darken1"
+                    color="--text"
                     background-color="--v-primary-base"
                     ref="Contact"
-                    id="footer"
                 )
-                    Contact(
-                        @containerResize="setHeight"
+                    v-btn(
+                        x-large
+                        style="background-color: var(--v-secondary-base)"
+                        @click="sheet = !sheet"
+                    ) Contact
+        v-bottom-sheet(
+            v-model="sheet"
+            :inset="windowWidth >= 960"
+        )
+            v-sheet(
+                class="text-center"
+                height="225px"
+            )
+                .sheet-row-space-between
+                    v-spacer
+                    v-btn.ma-2(
+                        icon
+                        @click="sheet = false"
                     )
-                .footer-text
-                    span.text-caption Fred Liu 2020
+                        v-icon(
+                            large
+                        ) mdi-close
+                .pa-4(
+                    style="color: var(--text); margin-top: -44px"
+                )
+                    span.text-h6 I would be glad to hear from you!
+                    br
+                    span.text-h6 Contact me using the methods below:
+                .horizontal-aligner
+                    .icon-container.mb-12
+                        v-tooltip(
+                            bottom
+                            v-for="(contact, index) in contactIcons"
+                            :key="index"
+                        )
+                            template(
+                                v-slot:activator="{ on, attrs }"
+                            )
+                                a.vertical-aligner(
+                                    v-on="on"
+                                    v-bind="attrs"
+                                    :href="contact.link"
+                                    target="_blank"
+                                    style="text-decoration: none; color: var(--text)"
+                                )
+                                    .horizontal-aligner
+                                        span.pb-2.text-subtitle-1.uppercase {{ contact.type }}
+                                    .horizontal-aligner
+                                        v-btn.background-white(
+                                            icon
+                                        )
+                                            v-icon(
+                                                size="50px"
+                                                color="#191d20e8"
+                                            ) {{ contact.icon }}
+                            span {{ contact.info }}
 </template>
 
 <script>
@@ -42,17 +104,38 @@
     import Container from '@/components/Container.vue'
     import About from '@/components/About.vue'
     import Tabs from '@/components/Tabs.vue'
-    import Contact from '@/components/Contact.vue'
+    import Portfolio from '@/components/Portfolio.vue'
     export default {
         name: "App",
         data: () => {
             return {
+                sheet: false,
                 windowWidth: 0,
+                noScrollWidth: 0,
                 windowHeight: 0,
+                contactIcons: [
+                    {
+                        icon: 'mdi-github',
+                        info: 'FredLiu876',
+                        link: 'https://github.com/FredLiu876',
+                        type: 'Github'
+                    },
+                    {
+                        icon: 'mdi-email',
+                        info: 'fredliu876@gmail.com',
+                        link: 'mailto:fredliu876@gmail.com',
+                        type: 'Email'
+                    },
+                    {
+                        icon: 'mdi-linkedin',
+                        info: 'Fred Liu',
+                        link: 'https://ca.linkedin.com/in/fred-liu-a457a518a',
+                        type: 'LinkedIn'
+                    }
+                ],
                 containerHeights: {
                     "About": 0,
-                    "Tabs": 0,
-                    "Contact": 0
+                    "Portfolio": 0
                 }
             }
         },
@@ -62,17 +145,15 @@
             Container,
             About,
             Tabs,
-            Contact
+            Portfolio
         },
         methods: {
             resize: function() {
                 this.windowWidth = window.innerWidth
+                this.noScrollWidth = document.body.clientWidth
                 this.windowHeight = window.innerHeight
                 let keys = Object.keys(this.containerHeights)
-                console.log(keys)
                 for (let i = 0; i < keys.length; i++) {
-                    console.log(this.$refs[keys[i]].$el)
-                    console.log(this.$refs[keys[i]].$el.offsetHeight)
                     this.containerHeights[keys[i]] = this.$refs[keys[i]].$el.offsetHeight
                 }
             },
@@ -90,7 +171,7 @@
 
 <style lang="scss">
     :root {
-        --text: #191d20d7;
+        --text: #191d20e8;
     }
 
     html {
@@ -119,5 +200,32 @@
     }
     #footer .container {
         padding-bottom: 16px !important;
+    }
+</style>
+
+<style scoped>
+    .sheet-row-space-between {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .icon-container {
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .vertical-aligner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .horizontal-aligner {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .uppercase {
+        text-transform: uppercase;
+        letter-spacing: 0.1666666666667rem;
     }
 </style>

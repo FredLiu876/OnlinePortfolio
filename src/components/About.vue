@@ -15,7 +15,8 @@
                 sm="6"
                 cols="10"
             )
-                span.text-h6 Hello! My name is Fred Liu and I'm a first year computer science student at the University of Waterloo.
+                .text-left
+                    span.text-h6 Hello! My name is Fred Liu and I'm a first year computer science student at the University of Waterloo.
                 br
                 .text-left(
                     v-for="(paragraph, i) in paragraphs"
