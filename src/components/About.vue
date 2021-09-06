@@ -7,8 +7,9 @@
                 sm="3"
                 cols="10"
             )
-                v-img(
+                v-img.default(
                     src="@/assets/fred.jpg"
+                    :class="scrolledIn ? 'slide-in-from-left':''"
                 )
             v-col(
                 offset="1"
@@ -18,26 +19,35 @@
                 .text-left
                     span.text-h6 Hello! My name is Fred Liu and I'm a first year computer science student at the University of Waterloo.
                 br
-                .text-left(
-                    v-for="(paragraph, i) in paragraphs"
+                .fade-in-section(
+                    :class="scrolledIn ? 'is-visible-delay-2':''"
                 )
-                    br
-                    span.text-body-2.pt-4 {{ paragraph }}
-                .text-left
-                    br
-                    br
-                    a(
-                        href="/assets/Fred_Resume.pdf"
-                        style="text-decoration: none;"
-                        download
+                    .text-left(
+                        v-for="(paragraph, i) in paragraphs"
                     )
-                        v-btn Resume
-                            v-icon mdi-download
+                        br
+                        span.text-body-2.pt-4 {{ paragraph }}
+                    .text-left
+                        br
+                        br
+                        a(
+                            href="/assets/Fred_Resume.pdf"
+                            style="text-decoration: none;"
+                            download
+                        )
+                            v-btn Resume
+                                v-icon mdi-download
 </template>
 
 <script>
     export default {
         name: "About",
+        props: {
+            scrolledIn: {
+                type: Boolean,
+                required: true
+            }
+        },
         data: () => {
             return {
                 paragraphs: [
@@ -57,3 +67,17 @@
         }
     }
 </script>
+
+<style scoped>
+    .default {
+        transform: translateX(-100%);
+    }
+    .slide-in-from-left {
+        transform: translateX(0%) !important;
+        transition: transform 2s ease;
+    }
+    .fade-in-section.is-visible-delay-2 {
+        opacity: 1;
+        transition-delay: 2s;
+    }
+</style>

@@ -4,6 +4,11 @@
             v-model="tabModel"
             fixed-tabs
             class="tab-headers"
+            next-icon="mdi-arrow-right-bold-box-outline"
+            prev-icon="mdi-arrow-left-bold-box-outline"
+            dark
+            show-arrows
+            background-color="primary"
         )
             v-tabs-slider(
                 color="accent lighten-3"
@@ -11,7 +16,7 @@
             v-tooltip(
                 v-for="(tab, tabindex) in tabs"
                 :key="tabindex"
-                bottom
+                top
             )
                 template(v-slot:activator="{ on, attrs }")
                     v-tab(
@@ -94,13 +99,41 @@
                     style="background-color: var(--text)"
                 )
                 ul(
-                    class="modal-list pt-4 pr-4 ml-2 modal-card-text text-md-h6 text-subtitle-1"
+                    class="modal-list pt-4 pr-md-4 ml-md-4 pr-2 ml-2 modal-card-text text-md-h6 text-subtitle-1"
                 ) {{ preInfo }}
                     li(
                         class="modal-card-text text-md-subtitle-1 text-body-1"
                         v-for="(point, pointIndex) in displayInfo"
                         :key="pointIndex"
                     ) {{ point }}
+                .horizontal-aligner.mt-12
+                    .icon-container
+                        v-tooltip(
+                            bottom
+                            v-for="(icon, iconIndex) in displayIcons"
+                            :key="iconIndex"
+                        )
+                            template(
+                                v-slot:activator="{ on, attrs }"
+                            )
+                                a.vertical-aligner(
+                                    v-on="on"
+                                    v-bind="attrs"
+                                    :href="icon.link"
+                                    target="_blank"
+                                    style="text-decoration: none; color: var(--text)"
+                                )
+                                    .horizontal-aligner
+                                        span.pb-2.text-subtitle-1.uppercase {{ icon.type }}
+                                    .horizontal-aligner
+                                        v-btn.background-white(
+                                            icon
+                                        )
+                                            v-icon(
+                                                size="50px"
+                                                color="#191d20e8"
+                                            ) {{ icon.icon }}
+                            span {{ icon.info }}
                 v-card-actions
                     v-spacer
                     v-icon(
@@ -135,6 +168,7 @@
                     this.displayName = ''
                     this.displayInfo = []
                     this.displayDate = ''
+                    this.displayIcons = []
                     this.preInfo = ''
                     this.moreInfoOverlay = false
                 }, 100)
@@ -149,6 +183,13 @@
                 }
                 if ("preInfo" in item) {
                     this.preInfo = item.preInfo
+                } else {
+                    this.preInfo = ''
+                }
+                if ('icons' in item) {
+                    this.displayIcons = item.icons
+                } else {
+                    this.displayIcons = []
                 }
                 this.moreInfoOverlay = true
                 this.disableScroll()
@@ -158,6 +199,7 @@
                 this.displayInfo = []
                 this.displayDate = ''
                 this.preInfo = ''
+                this.displayIcons = []
                 this.moreInfoOverlay = false
                 this.enableScroll()
             },
@@ -211,6 +253,7 @@
                 displayName: '',
                 displayInfo: [],
                 displayDate: '',
+                displayIcons: [],
                 moreInfoOverlay: false,
                 tooltips: {
                     'Experience': {
@@ -243,7 +286,10 @@
                                 identifier: "Software Tester Coop",
                                 date: "May 2021 - Aug 2021",
                                 description: [
-                                    'My current workplace, still in progress'
+                                    "Scripted many API tests that were added to continuous integration, significantly reducing future effort",
+                                    "Explored to find many obscure major impact bugs resulting in a more robust system",
+                                    "Communicated effectively with product owner and developers to ensure new event notification feature met requirements, receiving very positive feedback during customer trials",
+                                    "Critically analyzed workplace methodologies and suggested using agile strategy of acceptance testing"
                                 ]
                             },
                             {
@@ -269,6 +315,20 @@
                                     "Worked on robot vision to automatically shoot ball into goal",
                                     "Led the development of former team website at eomlions7476.com",
                                     "Mentored younger members of the team on programming logic and web development"
+                                ],
+                                icons: [
+                                    {
+                                        link: 'https://github.com/yourBoiGershy/LionsWebsite',
+                                        icon: 'mdi-github',
+                                        type: 'Github',
+                                        info: 'See website source code'
+                                    },
+                                    {
+                                        link: 'https://eomlions7476.com',
+                                        icon: 'mdi-magnify',
+                                        type: 'Learn more',
+                                        info: 'eomlions7476.com'
+                                    }                                    
                                 ]
                             }
                         ]
@@ -449,7 +509,21 @@
                                     "MongoDB & Flask in backend to store, retrieve and process tutorials",
                                     "RESTful website design to communicate between frontend and backend",
                                     "Wrote tutorials on data structures and other relevant computer science skills"
-                                ]
+                                ],
+                                icons: [
+                                    {
+                                        link: 'https://github.com/FredLiu876/CSTutorials',
+                                        icon: 'mdi-github',
+                                        type: 'Github',
+                                        info: 'See source code'
+                                    },
+                                    {
+                                        link: 'https://dailyinnovation.ca',
+                                        icon: 'mdi-laptop',
+                                        type: 'Visit site',
+                                        info: 'dailyinnovation.ca'
+                                    }
+                                ],
                             },
                             {
                                 displayName: "Personal Website",
@@ -459,6 +533,14 @@
                                 date: "Aug 2020 - Ongoing",
                                 description: [
                                     "This webpage speaks for the project"
+                                ],
+                                icons: [
+                                    {
+                                        link: 'https://github.com/FredLiu876/OnlinePortfolio',
+                                        icon: 'mdi-github',
+                                        type: 'Github',
+                                        info: 'See source code'
+                                    }
                                 ]
                             },
                             {
@@ -471,6 +553,14 @@
                                     "Compresses text files with a ~45% compression ratio using Huffman then LZ77 lossless compression algorithms",
                                     "Implemented binary trees, stacks and used hashmaps to make Huffman compression successful",
                                     "Written in C++"
+                                ],
+                                icons: [
+                                    {
+                                        link: 'https://github.com/FredLiu876/FredZip',
+                                        icon: 'mdi-github',
+                                        type: 'Github',
+                                        info: 'See source code'
+                                    }
                                 ]
                             },
                             {
@@ -483,8 +573,41 @@
                                     "Allows teachers to automatically take attendance by having students take picture of themselves",
                                     "Bootstrap used in frontend, MongoDB and flask in backend",
                                     "RESTful website design to communicate between frontend and backend"
+                                ],
+                                icons: [
+                                    {
+                                        link: 'https://github.com/ZhengWang26/Smartendance',
+                                        icon: 'mdi-github',
+                                        type: 'Github',
+                                        info: 'See source code'
+                                    },
+                                    {
+                                        link: 'https://smartendance.ca',
+                                        icon: 'mdi-laptop',
+                                        type: 'Visit site',
+                                        info: 'smartendance.ca'
+                                    }
+                                ],
+                            },
+                            {
+                                displayName: "FIRST Robotics Team 7476 Website",
+                                name: "Team 7476 Website",
+                                src: "lions.webp",
+                                identifier: "Robotics Team Website",
+                                date: "Jan 2020 - Feb 2020",
+                                description: [
+                                    "Led the development of former team website at eomlions7476.com",
+                                    "Mentored younger members of the team on to make further improvements"
+                                ],
+                                icons: [
+                                    {
+                                        link: 'https://github.com/yourBoiGershy/LionsWebsite',
+                                        icon: 'mdi-github',
+                                        type: 'Github',
+                                        info: 'See source code'
+                                    }
                                 ]
-                            }
+                            },
                         ]
                     }, 
                     {
@@ -500,6 +623,14 @@
                                 description: [
                                     "Transcribed and arranged songs for the piano",
                                     "Performed piano on Youtube"
+                                ],
+                                icons: [
+                                    {
+                                        link: 'https://www.youtube.com/channel/UCSPERm6YlB9x6e6nz_7b9sA',
+                                        icon: 'mdi-youtube',
+                                        type: 'Youtube',
+                                        info: 'See my piano Youtube videos'
+                                    }
                                 ]
                             },
                         ]
@@ -577,5 +708,20 @@
     }
     .modal-card-text {
         color: var(--text) !important;
+    }
+    .icon-container {
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .vertical-aligner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .horizontal-aligner {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 </style>

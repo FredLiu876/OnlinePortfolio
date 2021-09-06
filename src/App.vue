@@ -1,6 +1,8 @@
 <template lang="pug">
     #app(v-resize="resize")
-        v-app
+        v-app(
+            v-scroll="checkTop"
+        )
             VueNavbar(
                 :windowWidth="windowWidth"
                 :windowHeight="windowHeight"
@@ -14,17 +16,21 @@
                     :windowWidth="windowWidth"
                     :windowHeight="windowHeight"
                 )
-                Container(
+                Container.fade-in-section(
+                    :class="scrolledPast ? 'is-visible':''"
                     name="About"
-                    color="--text"
-                    background-color="--v-secondary-base"
+                    :isBackgroundImage="true"
+                    backgroundImage="2.jpg"
                     ref="About"
                 )
-                    About
+                    About(
+                        :scrolledIn="scrolledPast"
+                    )
                 Container(
                     name="Portfolio"
                     color="--text"
-                    background-color="--v-accent-lighten4"
+                    backgroundColor="--v-secondary-base"
+                    :isBackgroundImage="false"
                     ref="Portfolio"
                 )
                     Portfolio
@@ -37,7 +43,8 @@
                 Container(
                     name="Contact"
                     color="--text"
-                    background-color="--v-primary-base"
+                    backgroundColor="--v-primary-base"
+                    :isBackgroundImage="false"
                     ref="Contact"
                 )
                     v-btn(
@@ -69,7 +76,9 @@
                     br
                     span.text-h6 Contact me using the methods below:
                 .horizontal-aligner
-                    .icon-container.mb-12
+                    .icon-container.mb-12(
+                        :style="{width: determineWidth()}"
+                    )
                         v-tooltip(
                             bottom
                             v-for="(contact, index) in contactIcons"
@@ -110,6 +119,8 @@
         data: () => {
             return {
                 sheet: false,
+                scrollTop: 0,
+                scrolledPast: false,
                 windowWidth: 0,
                 noScrollWidth: 0,
                 windowHeight: 0,
@@ -159,10 +170,26 @@
             },
             setHeight: function(value) {
                 this.containerHeights[value.container] = this.$refs[value.container].$el.offsetHeight
+            },
+            checkTop: function() {
+                this.scrollTop = document.documentElement.scrollTop
+                if (this.scrollTop >= this.windowHeight / 2) {
+                    this.scrolledPast = true
+                }
+            },
+            determineWidth: function() {
+                if (this.windowWidth > 960) {
+                    return '50%'
+                } else if (this.windowWidth > 600) {
+                    return '60%'
+                } else {
+                    return '80%'
+                } 
             }
         },
         mounted() {
             setTimeout(this.resize, 150)
+            this.checkTop()
         }
     }
 </script>
@@ -201,6 +228,15 @@
     #footer .container {
         padding-bottom: 16px !important;
     }
+
+    .fade-in-section {
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    .fade-in-section.is-visible {
+        opacity: 1;
+    }
 </style>
 
 <style scoped>
@@ -210,7 +246,6 @@
         justify-content: space-between;
     }
     .icon-container {
-        width: 50%;
         display: flex;
         justify-content: space-evenly;
     }
