@@ -282,7 +282,7 @@
                             {
                                 displayName: "Software Tester Coop at Nokia",
                                 name: "Nokia",
-                                src: "Nokia.png",
+                                src: "Nokia.jpg",
                                 identifier: "Software Tester Coop",
                                 date: "May 2021 - Aug 2021",
                                 description: [
@@ -295,7 +295,7 @@
                             {
                                 displayName: "Future Tech Intern, IP/Optics division at Nokia",
                                 name: "Nokia",
-                                src: "Nokia.png",
+                                src: "Nokia.jpg",
                                 identifier: "Future Tech Intern",
                                 date: "July 2019 - Aug 2019",
                                 description: [
@@ -621,16 +621,7 @@
                                 src: "music.jpg",
                                 identifier: "Arranging and playing pieces",
                                 description: [
-                                    "Transcribed and arranged songs for the piano",
-                                    "Performed piano on Youtube"
-                                ],
-                                icons: [
-                                    {
-                                        link: 'https://www.youtube.com/channel/UCSPERm6YlB9x6e6nz_7b9sA',
-                                        icon: 'mdi-youtube',
-                                        type: 'Youtube',
-                                        info: 'See my piano Youtube videos'
-                                    }
+                                    "Transcribe and play songs on the piano"
                                 ]
                             },
                         ]

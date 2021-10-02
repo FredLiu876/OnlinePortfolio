@@ -1,17 +1,9 @@
 <template lang="pug">
-    v-carousel(
-        hide-delimiters
-        show-arrows-on-hover
+    v-img(
         :height="windowHeight"
         :width="windowWidth"
+        src="@/assets/1.jpg"
     )
-        v-carousel-item(
-            v-for="(image,i) in images"
-            :key="i"
-            :src="require('@/assets/' + image)"
-            reverse-transition="fade-transition"
-            transition="fade-transition"
-        )
         .carousel-item-overlay
             .first-filler
             .inline-text(
@@ -42,24 +34,13 @@
             .second-filler
             span.text-lg-h3.text-md-h4.text-sm-h5.text-h6.website-subtitle.fade-in-section More about me below
             .third-filler
-            v-icon.icon-styles.fade-in-section mdi-arrow-down
-        //-
-            .carousel-text-container
-                div
-                    span.carousel-text.text-lg-h1.text-md-h2.text-sm-h3.text-h4 Fred Liu
+            v-icon.icon-styles.fade-in-section(color="white") mdi-arrow-down
 </template>
 
 <script>
     export default {
         name: "VueCarousel",
         data: () => {
-            return {
-                images: [
-                    "1.jpg",
-                    "2.jpg",
-                    "3.jpg"
-                ]
-            }
         },
         props: {
             windowWidth: {
