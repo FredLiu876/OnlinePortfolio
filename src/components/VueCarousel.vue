@@ -3,44 +3,60 @@
         :height="windowHeight"
         :width="windowWidth"
         src="@/assets/1.jpg"
+        @load="loadImage"
     )
         .carousel-item-overlay
             .first-filler
-            .inline-text(
-                :style="{width: determineWidth()}"
+            .pre-load(
+                v-show="!imageLoaded"
             )
-                span.text-h2.text-sm.h1.website-title(
-                    :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
-                ) F
-                span.text-h2.text-sm.h1.website-title(
-                    :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
-                ) R
-                span.text-h2.text-sm.h1.website-title(
-                    :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
-                ) E
-                span.text-h2.text-sm.h1.website-title(
-                    :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
-                ) D
-                div
-                span.text-h2.text-sm.h1.website-title(
-                    :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
-                ) L
-                span.text-h2.text-sm.h1.website-title(
-                    :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
-                ) I
-                span.text-h2.text-sm.h1.website-title(
-                    :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
-                ) U
-            .second-filler
-            span.text-lg-h3.text-md-h4.text-sm-h5.text-h6.website-subtitle.fade-in-section More about me below
-            .third-filler
-            v-icon.icon-styles.fade-in-section(color="white") mdi-arrow-down
+                .inline-text(
+                    :style="{width: determineWidth()}"
+                )
+                    span.text-body-1.text-sm-h4(
+                        style="color: var(--text); font-weight: 400; font-style: italic;"
+                    ) Please wait a few seconds for images to load
+            .after-load(
+                v-show="imageLoaded"
+            )    
+                .inline-text(
+                    :style="{width: determineWidth()}"
+                )
+                    span.text-h4.text-sm-h2.website-title(
+                        :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
+                    ) F
+                    span.text-h4.text-sm-h2.website-title(
+                        :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
+                    ) R
+                    span.text-h4.text-sm-h2.website-title(
+                        :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
+                    ) E
+                    span.text-h4.text-sm-h2.website-title(
+                        :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
+                    ) D
+                    div
+                    span.text-h4.text-sm-h2.website-title(
+                        :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
+                    ) L
+                    span.text-h4.text-sm-h2.website-title(
+                        :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
+                    ) I
+                    span.text-h4.text-sm-h2.website-title(
+                        :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
+                    ) U
+                .second-filler
+                span.text-lg-h3.text-md-h4.text-sm-h5.text-h6.website-subtitle.fade-in-section More about me below
+                .third-filler
+                v-icon.icon-styles.fade-in-section(color="white") mdi-arrow-down
 </template>
 
 <script>
     export default {
         name: "VueCarousel",
         data: () => {
+            return {
+                imageLoaded: false
+            }
         },
         props: {
             windowWidth: {
@@ -61,23 +77,32 @@
                 } else {
                     return '80%'
                 } 
+            },
+            loadImage: function() {
+                this.imageLoaded = true
+            },
+            checkLoading: function() {
+                setTimeout(()=>{
+                    if (this.imageLoaded) {
+                        let websiteSubtitles = document.querySelectorAll('.fade-in-section')
+                        websiteSubtitles[0].className += ' is-visible-delay-2'
+                        websiteSubtitles[1].className += ' is-visible-delay-3'
+                        let websiteTitles = document.querySelectorAll('.website-title')
+                        websiteTitles[0].className += ' normal-position-1'
+                        websiteTitles[1].className += ' normal-position-2'
+                        websiteTitles[2].className += ' normal-position-3'
+                        websiteTitles[3].className += ' normal-position-4'
+                        websiteTitles[4].className += ' normal-position-5'
+                        websiteTitles[5].className += ' normal-position-6'
+                        websiteTitles[6].className += ' normal-position-7'
+                    } else {
+                        this.checkLoading()
+                    }
+                }, 100)
             }
         },
         mounted() {
-            let websiteSubtitles = document.querySelectorAll('.fade-in-section')
-            websiteSubtitles[0].className += ' is-visible-delay-2'
-            websiteSubtitles[1].className += ' is-visible-delay-3'
-            setTimeout(()=>{
-                let websiteTitles = document.querySelectorAll('.website-title')
-                websiteTitles[0].className += ' normal-position-1'
-                websiteTitles[1].className += ' normal-position-2'
-                websiteTitles[2].className += ' normal-position-3'
-                websiteTitles[3].className += ' normal-position-4'
-                websiteTitles[4].className += ' normal-position-5'
-                websiteTitles[5].className += ' normal-position-6'
-                websiteTitles[6].className += ' normal-position-7'
-            }, 1)
-            
+            this.checkLoading()
         }
     }
 </script>
