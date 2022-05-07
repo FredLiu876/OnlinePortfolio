@@ -78,6 +78,6 @@
     }
     .fade-in-section.is-visible-delay-2 {
         opacity: 1;
-        transition-delay: 2s;
+        transition-delay: 1s;
     }
 </style>

@@ -99,7 +99,7 @@
                     style="background-color: var(--text)"
                 )
                 ul(
-                    class="modal-list pt-4 pr-md-4 ml-md-4 pr-2 ml-2 modal-card-text text-md-h6 text-subtitle-1"
+                    class="modal-list pt-4 pr-md-4 ml-md-4 pr-2 ml-2 modal-card-text text-h6"
                 ) {{ preInfo }}
                     li(
                         class="modal-card-text text-md-subtitle-1 text-body-1"
@@ -280,6 +280,18 @@
                         moreInfo: "",
                         items: [
                             {
+                                displayName: "Data Scientist Intern at Wish",
+                                name: "Wish",
+                                src: "Wish.jpg",
+                                identifier: "Data Scientist Intern",
+                                date: "Jan 2022 - Apr 2022",
+                                description: [
+                                    "Built dashboard for automatic analysis of all types of emails and push notifications sent, providing valuable information on how users engage with the notifications",
+                                    "Analyzed user retention metric under new dimensions that revealed new important actionable insights, then updated end-to-end process to automatically generate and visualize data in the new dimensions in future",
+                                    "Standardized notification-related metric definitions and collection with other data scientists to improve accuracy and consistency for product managers and future data scientists doing notification analysis",
+                                ]
+                            },
+                            {
                                 displayName: "Software Tester Coop at Nokia",
                                 name: "Nokia",
                                 src: "Nokia.jpg",
@@ -346,8 +358,19 @@
                                 preInfo: "Used in:",
                                 description: [
                                     "Programming problems and programming contests",
+                                    "Data pipelines",
                                     "Backend with MongoDB and Flask",
                                     "Automated test scripts"
+                                ]
+                            },
+                            {
+                                displayName: "SQL",
+                                name: "SQL",
+                                src: "technologies/sql.png",
+                                identifier: "Programming Language",
+                                preInfo: "Used in:",
+                                description: [
+                                    "Querying big data to create data pipelines or complete manual analysis"
                                 ]
                             },
                             {
@@ -389,6 +412,26 @@
                                 description: [
                                     "Wrote script to make robot align and shoot ball into goal automatically on FRC Team 7476",
                                     "Created poker game"
+                                ]
+                            },
+                            {
+                                displayName: "Airflow",
+                                name: "Airflow",
+                                src: "technologies/airflow.png",
+                                identifier: "Workflow management framework",
+                                preInfo: "Used in:",
+                                description: [
+                                    "Data pipelines"
+                                ]
+                            },
+                            {
+                                displayName: "Tableau",
+                                name: "Tableau",
+                                src: "technologies/tableau.png",
+                                identifier: "Data Visualization Software",
+                                preInfo: "Used in:",
+                                description: [
+                                    "Dashboards for automatic analysis"
                                 ]
                             },
                             {
@@ -479,7 +522,7 @@
                                 src: "technologies/confluence.png",
                                 identifier: "Project management tool",
                                 description: [
-                                    "Used to document automated testing, find documentation to self learn in Software Tester Coop at Nokia"
+                                    "Used to document data, automated testing, find documentation to self learn during internships"
                                 ]
                             },
                             {
@@ -518,10 +561,10 @@
                                         info: 'See source code'
                                     },
                                     {
-                                        link: 'https://dailyinnovation.ca',
+                                        link: 'https://cstutorialsfrontend.netlify.app',
                                         icon: 'mdi-laptop',
                                         type: 'Visit site',
-                                        info: 'dailyinnovation.ca'
+                                        info: 'CSTutorials'
                                     }
                                 ],
                             },
