@@ -3,7 +3,7 @@
         :height="windowHeight"
         :width="windowWidth"
         src="@/assets/1.jpg"
-        @load=""
+        @load="loadImage"
     )
         .carousel-item-overlay
             .first-filler
