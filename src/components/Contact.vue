@@ -61,7 +61,7 @@
                     {
                         icon: 'mdi-linkedin',
                         info: 'Fred Liu',
-                        link: 'https://ca.linkedin.com/in/fred-liu-a457a518a'
+                        link: 'https://www.linkedin.com/in/fredliu1/'
                     }
                 ]
             }

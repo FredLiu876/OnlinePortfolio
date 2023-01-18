@@ -3,7 +3,7 @@
         :height="windowHeight"
         :width="windowWidth"
         src="@/assets/1.jpg"
-        @load="loadImage"
+        @load=""
     )
         .carousel-item-overlay
             .first-filler
@@ -13,9 +13,12 @@
                 .inline-text(
                     :style="{width: determineWidth()}"
                 )
-                    span.text-body-1.text-sm-h4(
-                        style="color: var(--text); font-weight: 400; font-style: italic;"
-                    ) Please wait a few seconds for images to load
+                    .horizontal-align
+                        span.text-body-1.text-sm-h5(
+                            style="color: var(--text); font-weight: 400; font-style: italic;"
+                        ) Please wait a few seconds for images to load
+                .horizontal-align(style="margin-top: 4vh;")
+                    .dot-spin
             .after-load(
                 v-show="imageLoaded"
             )    
@@ -45,9 +48,7 @@
                         :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
                     ) U
                 .second-filler
-                span.text-lg-h3.text-md-h4.text-sm-h5.text-h6.website-subtitle.fade-in-section More about me below
-                .third-filler
-                v-icon.icon-styles.fade-in-section(color="white") mdi-arrow-down
+                v-icon.icon-styles.fade-in-section(color="white") mdi-chevron-double-down
 </template>
 
 <script>
@@ -86,7 +87,7 @@
                     if (this.imageLoaded) {
                         let websiteSubtitles = document.querySelectorAll('.fade-in-section')
                         websiteSubtitles[0].className += ' is-visible-delay-2'
-                        websiteSubtitles[1].className += ' is-visible-delay-3'
+                        //websiteSubtitles[1].className += ' is-visible-delay-3'
                         let websiteTitles = document.querySelectorAll('.website-title')
                         websiteTitles[0].className += ' normal-position-1'
                         websiteTitles[1].className += ' normal-position-2'
@@ -108,6 +109,43 @@
 </script>
 
 <style scoped>
+    .dot-spin {
+        position: relative;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: transparent;
+        color: transparent;
+        box-shadow: 0 -18px 0 0 var(--text), 12.727926px -12.727926px 0 0 var(--text), 18px 0 0 0 var(--text), 12.727926px 12.727926px 0 0 rgba(152, 128, 255, 0), 0 18px 0 0 rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 0 rgba(152, 128, 255, 0), -18px 0 0 0 rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 0 rgba(152, 128, 255, 0);
+        animation: dot-spin 1.5s infinite linear;
+    }
+
+    @keyframes dot-spin {
+        0%, 100% {
+            box-shadow: 0 -18px 0 0 var(--text), 12.727926px -12.727926px 0 0 var(--text), 18px 0 0 0 var(--text), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
+        }
+        12.5% {
+            box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.727926px -12.727926px 0 0 var(--text), 18px 0 0 0 var(--text), 12.727926px 12.727926px 0 0 var(--text), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
+        }
+        25% {
+            box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 0 var(--text), 12.727926px 12.727926px 0 0 var(--text), 0 18px 0 0 var(--text), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
+        }
+        37.5% {
+            box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 0 var(--text), 0 18px 0 0 var(--text), -12.727926px 12.727926px 0 0 var(--text), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
+        }
+        50% {
+            box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 0 var(--text), -12.727926px 12.727926px 0 0 var(--text), -18px 0 0 0 var(--text), -12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0);
+        }
+        62.5% {
+            box-shadow: 0 -18px 0 -5px rgba(152, 128, 255, 0), 12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 0 var(--text), -18px 0 0 0 var(--text), -12.727926px -12.727926px 0 0 var(--text);
+        }
+        75% {
+            box-shadow: 0 -18px 0 0 var(--text), 12.727926px -12.727926px 0 -5px rgba(152, 128, 255, 0), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 0 var(--text), -12.727926px -12.727926px 0 0 var(--text);
+        }
+        87.5% {
+            box-shadow: 0 -18px 0 0 var(--text), 12.727926px -12.727926px 0 0 var(--text), 18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 0 var(--text);
+        }
+    }
     .carousel-item-overlay {
         top: 25%;
         height: 75%;
@@ -119,7 +157,7 @@
         height: 20vh;
     }
     .second-filler {
-        height: 5vh;
+        height: 25vh;
     }
     .third-filler {
         height: 2vh;
@@ -133,6 +171,12 @@
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
+    }
+    .horizontal-align {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
     .website-title {
         color: var(--v-secondary-base);

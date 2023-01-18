@@ -17,7 +17,7 @@
                 cols="10"
             )
                 .text-left
-                    span.text-h6 Hello! My name is Fred Liu and I'm a second year computer science student at the University of Waterloo.
+                    span.text-h6 Hello! My name is Fred Liu and I'm a third year computer science student at the University of Waterloo.
                 br
                 .fade-in-section(
                     :class="scrolledIn ? 'is-visible-delay-2':''"

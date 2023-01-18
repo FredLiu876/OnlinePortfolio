@@ -280,14 +280,26 @@
                         moreInfo: "",
                         items: [
                             {
+                                displayName: "GCP Software Engineer Intern at Titanium Agency",
+                                name: "Titanium Agency",
+                                src: "titanium.jpg",
+                                identifier: "GCP Software Engineer Intern",
+                                date: "Sept 2022 - Dec 2022",
+                                description: [
+                                    "Optimized SQL scripts and database interactions, including speeding up ad campaign dashboard operations by roughly 5 times",
+                                    "Implemented websocket connection to build custom loading bar framework, improving user experience of expensive operations across the app",
+                                    "Built new page interacting with Facebook Business API for ad managers to clone ads in bulk"
+                                ]
+                            },
+                            {
                                 displayName: "Data Scientist Intern at Wish",
                                 name: "Wish",
                                 src: "Wish.jpg",
                                 identifier: "Data Scientist Intern",
                                 date: "Jan 2022 - Apr 2022",
                                 description: [
-                                    "Built dashboard for automatic analysis of all types of emails and push notifications sent, providing valuable information on how users engage with the notifications",
-                                    "Analyzed user retention metric under new dimensions that revealed new important actionable insights, then updated end-to-end process to automatically generate and visualize data in the new dimensions in future",
+                                    "Developed ETL data pipeline to automate analysis of app notifications from raw data, using attribution models to measure notification engagement",
+                                    "Analyzed anomaly in user retention under advertising dimensions, revealing crucial bias in north star metric",
                                     "Standardized notification-related metric definitions and collection with other data scientists to improve accuracy and consistency for product managers and future data scientists doing notification analysis",
                                 ]
                             },
@@ -311,9 +323,7 @@
                                 identifier: "Future Tech Intern",
                                 date: "July 2019 - Aug 2019",
                                 description: [
-                                    "Worked on a tool to automate the migration of routers",
-                                    "Reduced development time of project by 2-3 weeks",
-                                    "Parsed and organized data from router tests using Python’s TextFSM and Regex modules",
+                                    "Developed script to automatically parse router test logs given a TextFSM template, reducing development time of project to automate migration of routers by 2-3 weeks",
                                     "Made a development server where TextFSM templates could be uploaded and displayed, implemented using Flask and MongoDB"
                                 ]
                             },
@@ -386,6 +396,15 @@
                                 ]
                             },
                             {
+                                displayName: "C#",
+                                name: "C#",
+                                src: "technologies/csharp.png",
+                                identifier: "Programming Language",
+                                description: [
+                                    "Used extensively at Titanium Agency work, along with ASP.NET and Entity Framework"
+                                ]
+                            },
+                            {
                                 displayName: "C",
                                 name: "C",
                                 src: "technologies/c.png",
@@ -454,6 +473,25 @@
                                 description: [
                                     "This personal website",
                                     "CS Tutorials dailyinnovation.ca website"
+                                ]
+                            },
+                            {
+                                displayName: "ASP.NET",
+                                name: "ASP.NET",
+                                src: "technologies/aspnet.png",
+                                identifier: "Web application framework",
+                                description: [
+                                    "Used at Titanium Agency for fullstack and database entity management"
+                                ]
+                            },
+                            {
+                                displayName: "Google Cloud Platform",
+                                name: "GCP",
+                                src: "technologies/gcp.png",
+                                identifier: "Cloud Service",
+                                preInfo: "Used to create:",
+                                description: [
+                                    "Used BigQuery at Titanium Agency to manage data"
                                 ]
                             },
                             {
@@ -542,51 +580,6 @@
                         moreInfo: "Hover over my projects and click on more info to get a better explanation, try it out, and see the source code.",
                         items: [
                             {
-                                displayName: "Daily Innovation CS Tutorials",
-                                name: "Daily Innovation",
-                                src: "dailyInnovation.png",
-                                identifier: "CS tutorials website",
-                                date: "July 2020 - Sep 2020",
-                                description: [
-                                    "Vue & Vuetify to style and load dynamic frontend",
-                                    "MongoDB & Flask in backend to store, retrieve and process tutorials",
-                                    "RESTful website design to communicate between frontend and backend",
-                                    "Wrote tutorials on data structures and other relevant computer science skills"
-                                ],
-                                icons: [
-                                    {
-                                        link: 'https://github.com/FredLiu876/CSTutorials',
-                                        icon: 'mdi-github',
-                                        type: 'Github',
-                                        info: 'See source code'
-                                    },
-                                    {
-                                        link: 'https://cstutorialsfrontend.netlify.app',
-                                        icon: 'mdi-laptop',
-                                        type: 'Visit site',
-                                        info: 'CSTutorials'
-                                    }
-                                ],
-                            },
-                            {
-                                displayName: "Personal Website",
-                                name: "Personal Website",
-                                src: "fred.jpg",
-                                identifier: "This webpage",
-                                date: "Aug 2020 - Ongoing",
-                                description: [
-                                    "This webpage speaks for the project"
-                                ],
-                                icons: [
-                                    {
-                                        link: 'https://github.com/FredLiu876/OnlinePortfolio',
-                                        icon: 'mdi-github',
-                                        type: 'Github',
-                                        info: 'See source code'
-                                    }
-                                ]
-                            },
-                            {
                                 displayName: "FredZip Text Compressor and Extractor",
                                 name: "FredZip",
                                 src: "zip.png",
@@ -600,6 +593,24 @@
                                 icons: [
                                     {
                                         link: 'https://github.com/FredLiu876/FredZip',
+                                        icon: 'mdi-github',
+                                        type: 'Github',
+                                        info: 'See source code'
+                                    }
+                                ]
+                            },
+                            {
+                                displayName: "Personal Website",
+                                name: "Personal Website",
+                                src: "fred.jpg",
+                                identifier: "This webpage",
+                                date: "Aug 2020 - Ongoing",
+                                description: [
+                                    "This webpage speaks for the project"
+                                ],
+                                icons: [
+                                    {
+                                        link: 'https://github.com/FredLiu876/OnlinePortfolio',
                                         icon: 'mdi-github',
                                         type: 'Github',
                                         info: 'See source code'
@@ -651,6 +662,34 @@
                                     }
                                 ]
                             },
+                            {
+                                displayName: "Daily Innovation CS Tutorials",
+                                name: "Daily Innovation",
+                                src: "dailyInnovation.png",
+                                identifier: "CS tutorials website",
+                                date: "July 2020 - Sep 2020",
+                                description: [
+                                    "Please note that due to heroku changes, the tutorials stored in database are lost",
+                                    "Vue & Vuetify to style and load dynamic frontend",
+                                    "MongoDB & Flask in backend to store, retrieve and process tutorials",
+                                    "RESTful website design to communicate between frontend and backend",
+                                    "Wrote tutorials on data structures and other relevant computer science skills"
+                                ],
+                                icons: [
+                                    {
+                                        link: 'https://github.com/FredLiu876/CSTutorials',
+                                        icon: 'mdi-github',
+                                        type: 'Github',
+                                        info: 'See source code'
+                                    },
+                                    {
+                                        link: 'https://cstutorialsfrontend.netlify.app',
+                                        icon: 'mdi-laptop',
+                                        type: 'Visit site',
+                                        info: 'CSTutorials'
+                                    }
+                                ],
+                            },
                         ]
                     }, 
                     {
@@ -659,12 +698,39 @@
                         moreInfo: "Hover over the hobby and click on more info to see me play my arrangements and other piano pieces.",
                         items: [
                             {
-                                displayName: "Music",
-                                name: "Music",
+                                displayName: "Piano",
+                                name: "Piano",
                                 src: "music.jpg",
                                 identifier: "Arranging and playing pieces",
                                 description: [
                                     "Transcribe and play songs on the piano"
+                                ]
+                            },
+                            {
+                                displayName: "Violin",
+                                name: "Violin",
+                                src: "violin.jpg",
+                                identifier: "In progress learning",
+                                description: [
+                                    "Always learning! Working on mastering this beautiful instrument"
+                                ]
+                            },
+                            {
+                                displayName: "Badminton",
+                                name: "Badminton",
+                                src: "badminton.jpg",
+                                identifier: "Semi-competitive",
+                                description: [
+                                    "Played badminton for a long time, occasionally playing in competitive tournaments"
+                                ]
+                            },
+                            {
+                                displayName: "Running",
+                                name: "Running",
+                                src: "running.jpg",
+                                identifier: "Long Distance",
+                                description: [
+                                    "Not only is it a way to relax, but also a way of pushing myself and testing my mental resilience"
                                 ]
                             },
                         ]
