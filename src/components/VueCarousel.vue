@@ -7,18 +7,6 @@
     )
         .carousel-item-overlay
             .first-filler
-            .pre-load(
-                v-show="!imageLoaded"
-            )
-                .inline-text(
-                    :style="{width: determineWidth()}"
-                )
-                    .horizontal-align
-                        span.text-body-1.text-sm-h5(
-                            style="color: var(--text); font-weight: 400; font-style: italic;"
-                        ) Please wait while images load
-                .horizontal-align(style="margin-top: 4vh;")
-                    .dot-spin
             .after-load(
                 v-show="imageLoaded"
             )    
