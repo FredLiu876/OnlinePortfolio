@@ -280,6 +280,20 @@
                         moreInfo: "",
                         items: [
                             {
+                                displayName: "Data Engineer Intern at Super.com",
+                                name: "Super.com",
+                                src: "Super.jpg",
+                                identifier: "Data Engineer Intern",
+                                date: "May 2023 - Aug 2023",
+                                description: [
+                                    "Researched cost-savings opportunities and executed them, saving over $50000 annually and reducing storage space in AWS S3 by 60%",
+                                    "Architected highly scalable DAG pipeline factory to track customer support agent metrics that can easily extend to new business requirements",
+                                    "Orchestrated major data infrastructure tool DBT upgrade safely with minimal disruptions",
+                                    "Wrote custom connector to import freshdesk ticket activities to provide analytics on customer support agents",
+                                    "Solved difficult data issue bugs"
+                                ]
+                            },
+                            {
                                 displayName: "GCP Software Engineer Intern at Titanium Agency",
                                 name: "Titanium Agency",
                                 src: "titanium.jpg",
