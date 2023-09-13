@@ -458,6 +458,36 @@
                                 ]
                             },
                             {
+                                displayName: "Snowflake",
+                                name: "Snowflake",
+                                src: "technologies/Snowflake.jpg",
+                                identifier: "DBMS",
+                                description: [
+                                    "Used many built in options such as dynamic tables, zero-copy clones and query history.",
+                                    "Explored methods to cut costs"
+                                ]
+                            },
+                            {
+                                displayName: "DBT",
+                                name: "DBT",
+                                src: "technologies/DBT.jpg",
+                                identifier: "Data Transformation Framework",
+                                preInfo: "Used in:",
+                                description: [
+                                    "Building derived tables -> fact, dim and staging tables."
+                                ]
+                            },
+                            {
+                                displayName: "Pandas",
+                                name: "Pandas",
+                                src: "technologies/pandas.png",
+                                identifier: "Data Transformation Framework",
+                                preInfo: "Used in:",
+                                description: [
+                                    "Data pipelines"
+                                ]
+                            },
+                            {
                                 displayName: "Tableau",
                                 name: "Tableau",
                                 src: "technologies/tableau.png",
@@ -496,6 +526,16 @@
                                 identifier: "Web application framework",
                                 description: [
                                     "Used at Titanium Agency for fullstack and database entity management"
+                                ]
+                            },
+                            {
+                                displayName: "Amazon Web Services",
+                                name: "AWS",
+                                src: "technologies/aws.png",
+                                identifier: "Cloud Service",
+                                description: [
+                                    "Used lifecycle rules to reduce S3 storage at Super.com by 60%",
+                                    "Extensively used S3 and its python api for airflow logs and other data"
                                 ]
                             },
                             {
