@@ -33,7 +33,7 @@
                         br
                         br
                         a(
-                            href="/assets/Fred_Resume.pdf"
+                            href="/Fred_Resume.pdf"
                             style="text-decoration: none;"
                             download
                         )
