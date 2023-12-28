@@ -173,42 +173,42 @@
     }
     .normal-position-1 {
         transform: translateX(0%) !important;
-        transition: transform 1s ease-in;
+        transition: transform 0.5s ease-in;
     }
     .normal-position-2 {
         transform: translateX(0%) !important;
-        transition: transform 1.25s ease-in;
+        transition: transform 0.7s ease-in;
     }
     .normal-position-3 {
         transform: translateX(0%) !important;
-        transition: transform 1.5s ease-in;
+        transition: transform 0.9s ease-in;
     }
     .normal-position-4 {
         transform: translateX(0%) !important;
-        transition: transform 1.75s ease-in;
+        transition: transform 1.1s ease-in;
     }
     .normal-position-5 {
         transform: translateX(0%) !important;
-        transition: transform 2.25s ease-in;
+        transition: transform 1.3s ease-in;
     }
     .normal-position-6 {
         transform: translateX(0%) !important;
-        transition: transform 2.5s ease-in;
+        transition: transform 1.5s ease-in;
     }
     .normal-position-7 {
         transform: translateX(0%) !important;
-        transition: transform 2.75s ease-in;
+        transition: transform 1.7s ease-in;
     }
     .website-subtitle {
         color: var(--v-secondary-base);
     }
     .fade-in-section.is-visible-delay-2 {
         opacity: 1;
-        transition-delay: 3s;
+        transition-delay: 2s;
     }
     .fade-in-section.is-visible-delay-3 {
         opacity: 1;
-        transition-delay: 4s;
+        transition-delay: 2.5s;
     }
 </style>
 

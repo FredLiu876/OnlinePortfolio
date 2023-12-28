@@ -276,7 +276,7 @@
                 tabs: [
                     {
                         name: "Experience",
-                        description: "I have worked at Nokia twice, and also participated in my robotics team.",
+                        description: "I have all sorts of work experience that helps me be a well-rounded person who can understand the all pieces as a whole.",
                         moreInfo: "",
                         items: [
                             {
@@ -286,11 +286,11 @@
                                 identifier: "Data Engineer Intern",
                                 date: "May 2023 - Aug 2023",
                                 description: [
-                                    "Researched cost-savings opportunities and executed them, saving over $50000 annually and reducing storage space in AWS S3 by 60%",
+                                    "Researched cost-savings opportunities and executed them, saving over $50000 annually and reducing storage space in AWS S3 by 30%",
                                     "Architected highly scalable DAG pipeline factory to track customer support agent metrics that can easily extend to new business requirements",
                                     "Orchestrated major data infrastructure tool DBT upgrade safely with minimal disruptions",
                                     "Wrote custom connector to import freshdesk ticket activities to provide analytics on customer support agents",
-                                    "Solved difficult data issue bugs"
+                                    "Solved bugs pertaining to difficult data quality issues"
                                 ]
                             },
                             {

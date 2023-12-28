@@ -17,7 +17,9 @@
                 cols="10"
             )
                 .text-left
-                    span.text-h6 Hello! My name is Fred Liu and I'm a third year computer science student at the University of Waterloo.
+                    span.text-h6 Hello! I'm a third year computer science student at the University of Waterloo,
+                    br
+                    span.text-h6(style="font-style: italic") and I want to make an impact.
                 br
                 .fade-in-section(
                     :class="scrolledIn ? 'is-visible-delay-2':''"
@@ -26,7 +28,7 @@
                         v-for="(paragraph, i) in paragraphs"
                     )
                         br
-                        span.text-body-2.pt-4 {{ paragraph }}
+                        span.text-subtitle-1.pt-4 {{ paragraph }}
                     .text-left
                         br
                         br
@@ -52,15 +54,10 @@
             return {
                 paragraphs: [
                     `
-                    Based on the initial view of the webpage, you may have already noticed that I enjoy traveling and photography.
-                    However, despite all the amazing places out there, nothing beats the humble feeling of sitting down, tuning into some music and coding!
+                    I have all sorts of experiences, making me a well-rounded person who can see all pieces as a whole. Check them out below!
                     `,
                     `
-                    I'm very passionate about computer science, knowing that the skills I learn in this field can benefit many people.
-                    I hope to use my skills to make a positive impact!
-                    `,
-                    `
-                    To learn more, download my resume or browse the tabs below to see what I've been up to!
+                    Also, here's my resume:
                     `
                 ]
             }
