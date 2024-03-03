@@ -640,7 +640,7 @@
                                 identifier: "Text compressor/extractor",
                                 date: "Aug 2020",
                                 description: [
-                                    "Compresses text files with a ~45% compression ratio using Huffman then LZ77 lossless compression algorithms",
+                                    "Compresses text files with a ~55% compression ratio using Huffman then LZ77 lossless compression algorithms",
                                     "Implemented binary trees, stacks and used hashmaps to make Huffman compression successful",
                                     "Written in C++"
                                 ],
