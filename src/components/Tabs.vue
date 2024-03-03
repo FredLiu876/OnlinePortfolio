@@ -474,7 +474,7 @@
                                 identifier: "Workflow management framework",
                                 preInfo: "Used in:",
                                 description: [
-                                    "Data pipelines"
+                                    "Data pipelines at Super.com and Wish"
                                 ]
                             },
                             {
