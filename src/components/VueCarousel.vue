@@ -36,6 +36,11 @@
                         :style="{transform: 'translateX(' + String(windowWidth) + 'px)', fontSize: windowWidth > 960 ? '13vh !important':'3.75rem !important'}"
                     ) U
                 .second-filler
+                .inline-text(
+                    :style="{width: determineWidth()}"
+                )
+                    span.text-h5.fade-in-section.website-title Aspiring software engineer leveraging big data to make big impact
+                .third-filler
                 v-icon.icon-styles.fade-in-section(color="white") mdi-chevron-double-down
 </template>
 
@@ -75,7 +80,7 @@
                     if (this.imageLoaded) {
                         let websiteSubtitles = document.querySelectorAll('.fade-in-section')
                         websiteSubtitles[0].className += ' is-visible-delay-2'
-                        //websiteSubtitles[1].className += ' is-visible-delay-3'
+                        websiteSubtitles[1].className += ' is-visible-delay-3'
                         let websiteTitles = document.querySelectorAll('.website-title')
                         websiteTitles[0].className += ' normal-position-1'
                         websiteTitles[1].className += ' normal-position-2'
@@ -145,10 +150,10 @@
         height: 20vh;
     }
     .second-filler {
-        height: 25vh;
+        height: 15vh
     }
     .third-filler {
-        height: 2vh;
+        height: 3vh
     }
     .icon-styles {
         font-size: 100px;
