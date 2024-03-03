@@ -17,9 +17,7 @@
                 cols="10"
             )
                 .text-left
-                    span.text-h6 Hello! I'm a third year computer science student at the University of Waterloo,
-                    br
-                    span.text-h6(style="font-style: italic") and I want to make an impact.
+                    span.text-h6 Hello! I'm a computer science student at the University of Waterloo, graduating in 2025.
                 br
                 .fade-in-section(
                     :class="scrolledIn ? 'is-visible-delay-2':''"
@@ -54,10 +52,11 @@
             return {
                 paragraphs: [
                     `
-                    I have all sorts of experiences, making me a well-rounded person who can see all pieces as a whole. Check them out below!
+                    I'm currently processing a massive 150TB dataset using distributed systems to improve our large language model's coding capabilities. I researched near deduplication of text using minhash locality sensitive hashing at this scale. Since the number of false positives increase linearly to the size of the dataset, I developed a novel efficient algorithm to break out false positives reducing the false positive rate in clusters from 45% to 1%.
                     `,
                     `
-                    Also, here's my resume:
+                    I've also made important impacts at other placements, including finding important business insights as a data scientist at Wish.
+                    Here's my resume to see more:
                     `
                 ]
             }
