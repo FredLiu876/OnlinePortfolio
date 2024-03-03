@@ -280,29 +280,39 @@
                         moreInfo: "",
                         items: [
                             {
+                                displayName: "Software Engineer Intern at CohereAI",
+                                name: "CohereAI",
+                                src: "cohere.jpg",
+                                identifier: "Software Engineer Intern",
+                                date: "Jan 2024 - Apr 2023",
+                                description: [
+                                    "Processed 150TB of data using Spark distributed computing, improving the LLM's coding capabilities",
+                                    "Researched minhash Locality Sensitive Hashing algorithm for near deduplication of code data and designed new efficient algorithm to reduce the false positive rate within clusters from 45% to 1%",
+                                    "Developed new tool to generate dataset cards on Streamlit given any dataset, later becoming the most contributed repo on the team for its value in analytics and intra-team communication of datasets",
+                                ]
+                            },
+                            {
                                 displayName: "Data Engineer Intern at Super.com",
                                 name: "Super.com",
                                 src: "Super.jpg",
                                 identifier: "Data Engineer Intern",
                                 date: "May 2023 - Aug 2023",
                                 description: [
-                                    "Researched cost-savings opportunities and executed them, saving over $50000 annually and reducing storage space in AWS S3 by 30%",
-                                    "Architected highly scalable DAG pipeline factory to track customer support agent metrics that can easily extend to new business requirements",
-                                    "Orchestrated major data infrastructure tool DBT upgrade safely with minimal disruptions",
-                                    "Wrote custom connector to import freshdesk ticket activities to provide analytics on customer support agents",
-                                    "Solved bugs pertaining to difficult data quality issues"
+                                    "Orchestrated seamless upgrade of highly integrated tool DBT from 1.0 to 1.6, modernizing data processing options. This was a massive feat requiring coordinating the data team and having a safe rollback plan.",
+                                    "Architected and implemented scalable data pipeline factory integrated with SmartSheet to update a shared sheet with metrics, improving collaboration with suppliers and reducing time spent updating sheet by 20 hours per week.",
+                                    "Researched and executed cost-saving initiatives including building in-house connectors and implementing lifecycle rules to cloud storage, achieving a reduction of over $50,000 annually",
                                 ]
                             },
                             {
-                                displayName: "GCP Software Engineer Intern at Titanium Agency",
+                                displayName: "Full Stack Developer Intern at Titanium Agency",
                                 name: "Titanium Agency",
                                 src: "titanium.jpg",
-                                identifier: "GCP Software Engineer Intern",
+                                identifier: "Full Stack Developer Intern",
                                 date: "Sept 2022 - Dec 2022",
                                 description: [
-                                    "Optimized SQL scripts and database interactions, including speeding up ad campaign dashboard operations by roughly 5 times",
-                                    "Implemented websocket connection to build custom loading bar framework, improving user experience of expensive operations across the app",
-                                    "Built new page interacting with Facebook Business API for ad managers to clone ads in bulk"
+                                    "Minimized data fetch size from database by translating complex backend data transformation logic to SQL and limiting results by implementing pagination, accelerating frontend dashboard operations by 5 times",
+                                    "Developed loading bar component using WebSocket connection for realtime progress between frontend and backend, enhancing user experience for timely operations",
+                                    "Built new webpage using Facebook Business API for bulk ad cloning, reducing cloning time by up to 70%"
                                 ]
                             },
                             {
@@ -312,9 +322,9 @@
                                 identifier: "Data Scientist Intern",
                                 date: "Jan 2022 - Apr 2022",
                                 description: [
-                                    "Developed ETL data pipeline to automate analysis of app notifications from raw data, using attribution models to measure notification engagement",
-                                    "Analyzed anomaly in user retention under advertising dimensions, revealing crucial bias in north star metric",
-                                    "Standardized notification-related metric definitions and collection with other data scientists to improve accuracy and consistency for product managers and future data scientists doing notification analysis",
+                                    "Engineered end-to-end ETL data pipeline for automated data visualization of app notification metrics on Tableau, utilizing attribution data models to measure engagement, increasing engagement by 2 times",
+                                    "Conducted analysis of anomalies in user retention, discovering a crucial bias under advertising dimensions. This proved there was an actual 7% increase in the north star metric, improving employee morale",
+                                    "Collaborated with other data analysts to standardize data definitions and share templated SQL, expediting future analysis of notifications and reducing errors",
                                 ]
                             },
                             {
@@ -325,7 +335,7 @@
                                 date: "May 2021 - Aug 2021",
                                 description: [
                                     "Scripted many API tests that were added to continuous integration, significantly reducing future effort",
-                                    "Explored to find many obscure major impact bugs resulting in a more robust system",
+                                    "Explored to find many obscure major impact bugs such as memory leaks",
                                     "Communicated effectively with product owner and developers to ensure new event notification feature met requirements, receiving very positive feedback during customer trials",
                                     "Critically analyzed workplace methodologies and suggested using agile strategy of acceptance testing"
                                 ]
@@ -445,6 +455,16 @@
                                 description: [
                                     "Wrote script to make robot align and shoot ball into goal automatically on FRC Team 7476",
                                     "Created poker game"
+                                ]
+                            },
+                            {
+                                displayName: "Spark",
+                                name: "Spark",
+                                src: "technologies/spark.png",
+                                identifier: "Diistributed computing framework",
+                                preInfo: "Used in:",
+                                description: [
+                                    "Processing 150TB datasets and developed novel efficient algorithms that were converted to pyspark to leverage parallelism."
                                 ]
                             },
                             {
