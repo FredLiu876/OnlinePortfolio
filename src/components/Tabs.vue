@@ -461,7 +461,7 @@
                                 displayName: "Spark",
                                 name: "Spark",
                                 src: "technologies/spark.png",
-                                identifier: "Diistributed computing framework",
+                                identifier: "Distributed computing framework",
                                 preInfo: "Used in:",
                                 description: [
                                     "Processing 150TB datasets and developed novel efficient algorithms that were converted to pyspark to leverage parallelism."
