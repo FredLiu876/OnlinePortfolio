@@ -284,7 +284,7 @@
                                 name: "CohereAI",
                                 src: "cohere.jpg",
                                 identifier: "Software Engineer Intern",
-                                date: "Jan 2024 - Apr 2023",
+                                date: "Jan 2024 - Apr 2024",
                                 description: [
                                     "Processed 150TB of data using Spark distributed computing, improving the LLM's coding capabilities",
                                     "Researched minhash Locality Sensitive Hashing algorithm for near deduplication of code data and designed new efficient algorithm to reduce the false positive rate within clusters from 45% to 1%",
