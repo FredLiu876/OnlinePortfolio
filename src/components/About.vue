@@ -52,11 +52,11 @@
             return {
                 paragraphs: [
                     `
-                    I'm currently processing a massive 150TB dataset using distributed systems to improve our large language model's coding capabilities. I researched near deduplication of text using minhash locality sensitive hashing at this scale. Since the number of false positives increase linearly to the size of the dataset, I developed a novel efficient algorithm to break out false positives reducing the false positive rate in clusters from 45% to 1%.
+                    Recently at Cohere, I processed a massive 278TB dataset using distributed systems to improve our large language model's coding capabilities. I researched near deduplication of text using minhash locality sensitive hashing at this scale. Since the number of false positives increase linearly to the size of the dataset, I developed a novel efficient algorithm to break out false positives reducing the false positive rate in clusters from 45% to 1%. This pretraining dataset was shown to improve the model's coding capabilities by 4% on average across all code benchmarks.
                     `,
                     `
-                    I've also made important impacts at other placements, including finding important business insights as a data scientist at Wish.
-                    Here's my resume to see more:
+                    I've also made important impacts at other placements, including discovering critical business insights!
+                    Scroll down or see my resume:
                     `
                 ]
             }

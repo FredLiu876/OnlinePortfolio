@@ -280,15 +280,15 @@
                         moreInfo: "",
                         items: [
                             {
-                                displayName: "Software Engineer Intern at CohereAI",
-                                name: "CohereAI",
+                                displayName: "Software Engineer Intern at Cohere",
+                                name: "Cohere",
                                 src: "cohere.jpg",
                                 identifier: "Software Engineer Intern",
                                 date: "Jan 2024 - Apr 2024",
                                 description: [
-                                    "Processed 150TB of data using Spark distributed computing, improving the LLM's coding capabilities",
+                                    "Processed 278TB of raw code data using distributed computing with Spark, doing novel and innovative work at scale to improve the LLM's coding capabilities by 4% on average across all code benchmarks",
                                     "Researched minhash Locality Sensitive Hashing algorithm for near deduplication of code data and designed new efficient algorithm to reduce the false positive rate within clusters from 45% to 1%",
-                                    "Developed new tool to generate dataset cards on Streamlit given any dataset, later becoming the most contributed repo on the team for its value in analytics and intra-team communication of datasets",
+                                    "Developed data visualization internal tool integrated into pipelines as a post-hook to automatically build relevant visualizations at each data processing step, becoming the most contributed repo on the team",
                                 ]
                             },
                             {
@@ -464,7 +464,7 @@
                                 identifier: "Distributed computing framework",
                                 preInfo: "Used in:",
                                 description: [
-                                    "Processing 150TB datasets and developed novel efficient algorithms that were converted to pyspark to leverage parallelism."
+                                    "Processing 278TB datasets and developed novel efficient algorithms that were converted to pyspark to leverage parallelism."
                                 ]
                             },
                             {

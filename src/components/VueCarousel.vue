@@ -39,7 +39,7 @@
                 .inline-text(
                     :style="{width: determineWidth()}"
                 )
-                    span.text-h5.fade-in-section.website-title Aspiring software engineer leveraging big data to make big impact
+                    span.text-h5.fade-in-section.website-title Aspiring software engineer making big impacts in AI
                 .third-filler
                 v-icon.icon-styles.fade-in-section(color="white") mdi-chevron-double-down
 </template>
