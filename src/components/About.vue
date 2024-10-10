@@ -52,7 +52,7 @@
             return {
                 paragraphs: [
                     `
-                    I love working in technology. There are so many ways challenging problems to solve, interesting cutting-edge projects to work on and ways to make impact. If you have anything to share, I'm always down to learn something new.
+                    I love working in technology. There are so many challenging problems to solve, interesting cutting-edge projects to work on and ways to make impact. If you have anything to share, I'm always down to learn something new.
                     `,
                     `
                     I also value balance in all aspects of life, but there's so much about me that I can't fit in one page! To learn more about me, feel free to see my full resume which includes my hobbies too!
