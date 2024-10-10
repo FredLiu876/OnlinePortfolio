@@ -27,20 +27,6 @@
                         :scrolledIn="scrolledPast"
                     )
                 Container(
-                    name="Portfolio"
-                    color="--text"
-                    backgroundColor="--v-secondary-base"
-                    :isBackgroundImage="false"
-                    ref="Portfolio"
-                )
-                    Portfolio
-                Tabs(
-                    style="margin-top: -44px"
-                    ref="Tabs"
-                    :windowWidth="windowWidth"
-                    :noScrollWidth="noScrollWidth"
-                )
-                Container(
                     name="Contact"
                     color="--text"
                     backgroundColor="--v-primary-base"

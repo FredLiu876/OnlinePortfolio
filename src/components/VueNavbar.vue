@@ -22,12 +22,6 @@
                     href="#about"
                 ) About
                 v-btn.navbar-link.secondary--text(
-                    class="hidden-sm-and-down"
-                    :class="scrollTop >= windowHeight+aboutHeight-64 && !contactStatus ? 'active':''"
-                    text
-                    href="#portfolio"
-                ) Portfolio
-                v-btn.navbar-link.secondary--text(
                         class="hidden-sm-and-down"
                         :class="contactStatus ? 'active':''"
                         text

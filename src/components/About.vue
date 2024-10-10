@@ -52,11 +52,10 @@
             return {
                 paragraphs: [
                     `
-                    Recently at Cohere, I processed a massive 278TB dataset using distributed systems to improve our large language model's coding capabilities. I researched near deduplication of text using minhash locality sensitive hashing at this scale. Since the number of false positives increase linearly to the size of the dataset, I developed a novel efficient algorithm to break out false positives reducing the false positive rate in clusters from 45% to 1%. This pretraining dataset was shown to improve the model's coding capabilities by 4% on average across all code benchmarks.
+                    I love working in technology. There are so many ways challenging problems to solve, interesting cutting-edge projects to work on and ways to make impact. If you have anything to share, I'm always down to learn something new.
                     `,
                     `
-                    I've also made important impacts at other placements, including discovering critical business insights!
-                    Scroll down or see my resume:
+                    I also value balance in all aspects of life, but there's so much about me that I can't fit in one page! To learn more about me, feel free to see my full resume which includes my hobbies too!
                     `
                 ]
             }
